@@ -11,9 +11,11 @@ import {
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import DemoProduct from './pages/DemoProduct';
-
+import DropdownsComponent from "./pages/DropdownsComponent"
 import {useDocTitle} from './components/CustomHook';
 import ScrollToTop from './components/ScrollToTop';
+import "./styles/main-content.css"
+import NavBar from './components/Navbar/NavBar';
 
 function App() {
   useEffect(() => {
@@ -30,11 +32,14 @@ function App() {
     });
   }, []);
 
-  useDocTitle("MLD | Molad e Konsult - Bespoke Web and Mobile Applications");
+  useDocTitle("Druthi Creations");
 
   return (
     <>
+    <div className="main-content">
       <Router>
+        <NavBar />
+        <DropdownsComponent />
         <ScrollToTop>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -43,6 +48,7 @@ function App() {
           </Routes>
         </ScrollToTop>
       </Router>
+      </div>
     </>
   );
 }
